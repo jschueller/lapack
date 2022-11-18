@@ -43,7 +43,7 @@ endif()
 
 # By default test Fortran compiler complex abs and complex division
 option(TEST_FORTRAN_COMPILER "Test Fortran compiler complex abs and complex division" ON)
-if( TEST_FORTRAN_COMPILER )
+if(TEST_FORTRAN_COMPILER AND NOT CMAKE_CROSSCOMPILING)
 
   add_executable( test_zcomplexabs ${LAPACK_SOURCE_DIR}/INSTALL/test_zcomplexabs.f )
   add_custom_target( run_test_zcomplexabs
